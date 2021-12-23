@@ -1,0 +1,101 @@
+:root {
+    --purple-color: rgb(222, 84, 250);
+    --light-color: rgb(120, 250, 228);
+}
+
+* {
+    margin: 0;
+    padding: 0;;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+    color: var(--purple-color);
+}
+
+header,
+footer {
+    margin: 2%;
+    text-align: center;
+}
+
+p {
+  margin: 2%;
+}
+
+header p {
+    color: var(--light-color);
+}
+
+main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+code {
+    line-height: 150%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: var(--light-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.card-header {
+    position: relative;
+    margin-top: -30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--light-color);
+    border-radius: 8px;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.code-card {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--light-color);
+    background-image: linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+    );
+}
+
+/* Box Transition Glow */
+.code-card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover, 
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px
+        rgba(232, 102, 236, 1), 0 0 15px
+        rgba(232, 102, 236, 1);
+}
+
+/* For Responsive Page */
+@media screen and (max-width: 896px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+@media screen and (max-width: 640px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+    }
+}
