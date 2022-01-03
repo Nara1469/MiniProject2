@@ -63,6 +63,7 @@ code {
 
 .code-card {
     flex-grow: 1;
+    align-items: center;
     padding: 10px;
     border-radius: 8px;
     color: var(--light-color);
